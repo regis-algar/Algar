@@ -1,0 +1,14 @@
+services:
+  server_api:
+    build:
+      context: ./server_api
+    ports:
+      - "3000:3000"
+    environment:
+      - API_FOR_REDIRECT=https://teams-endpoint-hml.1kusz6bgmkpj.br-sao.codeengine.appdomain.cloud
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
